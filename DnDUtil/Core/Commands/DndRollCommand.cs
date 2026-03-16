@@ -1,4 +1,5 @@
-﻿using System;
+using Commons.Core.Util;
+using System;
 using System.Collections.Generic;
 using DnDUtil;
 
@@ -29,7 +30,7 @@ namespace DnDUtil.Core.Commands
 
                     string result = string.Join(", ", rolls);
 
-                    string userName = ChatUtils.GetUserName();
+                    string userName = PlayerUtils.GetUserName();
                     var message = $"{userName} rolled {input}: {result}";
                     string dndChatName = Plugin.AnnouncerChatName?.Value ?? Plugin.DefaultAnnouncerChatName;
 

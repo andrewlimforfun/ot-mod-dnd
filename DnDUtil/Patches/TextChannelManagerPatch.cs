@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+using Commons.Core.Util;
+using HarmonyLib;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Text.RegularExpressions;
@@ -35,7 +36,7 @@ namespace DnDUtil.Patches
                 // otherwise the lock management and unselection can happen in the real OnEnterPressed
                 if (Plugin.ShowCommand?.Value == false && isProcessed)
                 {
-                    ChatUtils.CleanCommand();
+                    ChatUtils.CleanCommand("dnd");
                 }
             }
 

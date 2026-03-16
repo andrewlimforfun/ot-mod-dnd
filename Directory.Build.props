@@ -1,0 +1,34 @@
+<Project>
+    <PropertyGroup>
+        <!--
+      Bump this once to version all mods together.
+      Individual projects can override by re-declaring <Version> after this import.
+    -->
+        <Version>0.0.7</Version>
+
+        <TeamName>AndrewLin</TeamName>
+        <Website>https://github.com/andrewlimforfun/ot-mods</Website>
+
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <Nullable>enable</Nullable>
+
+        <ThunderstoreBepInExVersion>5.4.2304</ThunderstoreBepInExVersion>
+        <CommonsVersion>0.0.1</CommonsVersion>
+
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Configurations>Debug;Release;Install</Configurations>
+
+        <!-- NuGet sources: official + BepInEx + samboy + local -->
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json;
+            https://nuget.samboy.dev/v3/index.json;
+            $(MSBuildThisFileDirectory)..\nuget-local\
+        </RestoreAdditionalProjectSources>
+
+        <!-- This path is used for local Install which automatically deploys the mod to the mod manager-->
+        <!-- r2modman local install path — override per-machine via Directory.Build.user -->
+        <LocalBepInExPluginPath>..\..\..\AppData\Roaming\r2modmanPlus-local\OnTogetherVirtualCoWorking\profiles\Default\BepInEx\plugins\</LocalBepInExPluginPath>
+    </PropertyGroup>
+</Project>

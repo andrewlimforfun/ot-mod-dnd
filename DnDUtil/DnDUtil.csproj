@@ -2,61 +2,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- if we want to match On-Together's .NET version use netstandard2.1 instead of net10.0 -->
-    <TeamName>AndrewLin</TeamName>
     <AssemblyName>AndrewLin.DnDUtil</AssemblyName>
     <PackageName>AndrewLin_DnDUtil</PackageName>
     <RootNamespace>DnDUtil</RootNamespace>
     <Description>A DnD dice mod for On-Together. Use /dndhelp</Description>
-    <Website>https://github.com/andrewlimforfun/ot-mods</Website>
-    <Version>0.0.7</Version>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <!-- only for net10 <ImplicitUsings>enable</ImplicitUsings> -->
-    <Nullable>enable</Nullable>
-    <BepisVersion>5.4.21</BepisVersion>
-    <!-- Configuration: Debug or Release override with CLI, dotnet build -c Release-->
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-
     <ZipOutputName>$(TeamName)-$(PackageName)-v$(Version).zip</ZipOutputName>
-    <!-- Local directory references -->
-    <LocalOnTogetherManagedPath>C:\Program Files (x86)\Steam\steamapps\common\On-Together\On-Together\OnTogether_Data\Managed\</LocalOnTogetherManagedPath>
-    <!-- Local install directory-->
-    <LocalBepInExPluginPath>..\..\..\AppData\Roaming\r2modmanPlus-local\OnTogetherVirtualCoWorking\profiles\Default\BepInEx\plugins\</LocalBepInExPluginPath>
     <LocalInstallPath>$(LocalBepInExPluginPath)\$(TeamName)-$(PackageName)\</LocalInstallPath>
-
   </PropertyGroup>
 
   <!-- NuGet Packages -->
   <ItemGroup>
     <!-- dotnet nuget add source https://nuget.bepinex.dev/v3/index.json -n bepinex-->
-    <PackageReference Include="BepInEx.Analyzers" Version="1.0.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="BepInEx.Core" Version="5.4.21" />
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    <PackageReference Include="OnTogether.GameLibs" Version="1.1.0" />
+    <PackageReference Include="UnityEngine.Modules" Version="6000.0.61" IncludeAssets="compile" />
     <PackageReference Include="HarmonyX" Version="2.10.1" />
-  </ItemGroup>
-
-  <!-- References to local installation for On Together -->
-  <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>$(LocalOnTogetherManagedPath)\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>$(LocalOnTogetherManagedPath)\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>$(LocalOnTogetherManagedPath)\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>$(LocalOnTogetherManagedPath)\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="PurrNet.Runtime">
-      <HintPath>$(LocalOnTogetherManagedPath)\PurrNet.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>$(LocalOnTogetherManagedPath)\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
+    <PackageReference Include="AndrewLin.OnTogether.Commons" Version="$(CommonsVersion)" />
   </ItemGroup>
 
   <!-- Generate BuildInfo.g.cs with version info for use in the mod -->
@@ -99,7 +62,7 @@
         "version_number": "$(Version)",
         "website_url": "$(Website)",
         "description": "$(Description)",
-        "dependencies": ["BepInEx-BepInExPack-5.4.2304"]
+        "dependencies": ["BepInEx-BepInExPack-$(ThunderstoreBepInExVersion)", "AndrewLin-Commons-$(CommonsVersion)"]
         }
       </ManifestContent>
     </PropertyGroup>
