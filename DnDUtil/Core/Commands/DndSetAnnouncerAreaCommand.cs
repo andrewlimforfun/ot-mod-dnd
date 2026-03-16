@@ -1,6 +1,7 @@
-using Commons.Core.Util;
+﻿using Commons.Core.Util;
 using System.Collections.Generic;
 using DnDUtil;
+using Commons.Core.Command;
 
 namespace DnDUtil.Core.Commands
 {
@@ -14,6 +15,7 @@ namespace DnDUtil.Core.Commands
         public string Description => $"Set the area to use when announcing rolls: [{ValidAreasText}]. Current: " + (Plugin.AnnouncerArea?.Value ?? "self");
 
         
+        public string Namespace => "dnd";
         public void Execute(string[] args)
         {
             if (Plugin.AnnouncerArea == null)

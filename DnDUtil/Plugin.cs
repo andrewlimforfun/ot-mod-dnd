@@ -1,8 +1,8 @@
 ﻿
+using Commons;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
-using DnDUtil.Core;
 using DnDUtil.Core.Commands;
 using DnDUtil.Patches;
 using HarmonyLib;
@@ -21,7 +21,6 @@ namespace DnDUtil
 
         public static string? PlayerId { get; private set; }
 
-        public static CommandManager? CommandProcessor { get; private set; }
 
         public const string DefaultAnnouncerChatName = "DnDSystem";
 
@@ -40,8 +39,13 @@ namespace DnDUtil
 
             InitConfig();
 
-            // Initialize command processor with all commands found via reflection
-            CommandProcessor = new CommandManager();
+            // Register commands with the shared Commons command manager
+            CommonsPlugin.CommandManager?.Register(new DndRollCommand());
+            CommonsPlugin.CommandManager?.Register(new RollCommand());
+            CommonsPlugin.CommandManager?.Register(new DndSetAnnouncerAreaCommand());
+            CommonsPlugin.CommandManager?.Register(new DndSetAnnouncerNameCommand());
+            CommonsPlugin.CommandManager?.Register(new DndShowCommand());
+            CommonsPlugin.CommandManager?.Register(new DndToggleCommand());
         }
 
         void InitConfig()

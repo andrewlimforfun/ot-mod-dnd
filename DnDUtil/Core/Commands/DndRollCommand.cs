@@ -1,7 +1,8 @@
-using Commons.Core.Util;
+﻿using Commons.Core.Util;
 using System;
 using System.Collections.Generic;
 using DnDUtil;
+using Commons.Core.Command;
 
 namespace DnDUtil.Core.Commands
 {
@@ -10,6 +11,7 @@ namespace DnDUtil.Core.Commands
         public virtual string Name => "dndroll";
         public virtual string ShortName => "dr";
         public string Description => $"Rolls a dice. E.g. '/{Name} 2d20 1d6' rolls 2 20-sided dice and 1 6-sided die.";
+        public string Namespace => "dnd";
         public void Execute(string[] args)
         {
             if (args.Length == 0)

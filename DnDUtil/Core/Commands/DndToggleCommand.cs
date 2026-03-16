@@ -1,5 +1,6 @@
-using Commons.Core.Util;
+﻿using Commons.Core.Util;
 using DnDUtil;
+using Commons.Core.Command;
 
 namespace DnDUtil.Core.Commands
 {
@@ -10,6 +11,7 @@ namespace DnDUtil.Core.Commands
         public string ShortName => "dt";
         public string Description => "Toggle DnDUtil feature on/off. ";
 
+        public string Namespace => "dnd";
         public void Execute(string[] args)
         {
             if (Plugin.EnableFeature == null)

@@ -1,5 +1,6 @@
-using Commons.Core.Util;
+﻿using Commons.Core.Util;
 using DnDUtil;
+using Commons.Core.Command;
 
 namespace DnDUtil.Core.Commands
 {
@@ -12,6 +13,7 @@ namespace DnDUtil.Core.Commands
             "If enabled, user command such as '/roll' will be shown in chat. Current: " + 
             (Plugin.ShowCommand?.Value == true ? "shown" : "hidden");
 
+        public string Namespace => "dnd";
         public void Execute(string[] args)
         {
             if (Plugin.ShowCommand == null)

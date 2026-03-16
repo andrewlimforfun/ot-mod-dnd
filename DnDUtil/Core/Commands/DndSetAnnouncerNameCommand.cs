@@ -1,6 +1,7 @@
-using Commons.Core.Util;
+﻿using Commons.Core.Util;
 using BepInEx.Logging;
 using DnDUtil;
+using Commons.Core.Command;
 
 namespace DnDUtil.Core.Commands
 {
@@ -12,6 +13,7 @@ namespace DnDUtil.Core.Commands
         public string Description => "Set the name to use when sending messages to chat. Current: " + 
         (Plugin.AnnouncerChatName?.Value ?? Plugin.DefaultAnnouncerChatName);
 
+        public string Namespace => "dnd";
         public void Execute(string[] args)
         {
             if (Plugin.AnnouncerChatName == null)
