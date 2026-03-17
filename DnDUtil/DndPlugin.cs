@@ -4,15 +4,14 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using DnDUtil.Core.Commands;
-using DnDUtil.Patches;
 using HarmonyLib;
 using UnityEngine;
 
 
 namespace DnDUtil
 {
-    [BepInPlugin(Plugin.ModGUID, Plugin.ModName, Plugin.ModVersion)]
-    public class Plugin : BaseUnityPlugin
+    [BepInPlugin(DndPlugin.ModGUID, DndPlugin.ModName, DndPlugin.ModVersion)]
+    public class DndPlugin : BaseUnityPlugin
     {
         public static ConfigEntry<bool>? EnableFeature { get; private set; }
         public static ConfigEntry<bool>? ShowCommand { get; private set; }
@@ -33,11 +32,9 @@ namespace DnDUtil
             // This runs once when the game starts
             Logger.LogInfo($"{ModName} v{ModVersion} is loaded!");
 
-            // Apply Harmony patches
-            var harmony = new Harmony(ModGUID);
-            harmony.PatchAll(typeof(TextChannelManagerPatch));
-
             InitConfig();
+
+            // no patching needed, commands are handled by commons command manager
 
             // Register commands with the shared Commons command manager
             CommonsPlugin.CommandManager?.Register(new DndRollCommand());

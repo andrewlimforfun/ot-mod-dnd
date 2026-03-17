@@ -83,7 +83,7 @@ dotnet clean
 
 ### Key Components
 
-- **Plugin.cs**: Main entry point, registers with BepInEx
+- **DndPlugin.cs**: Main entry point, registers with BepInEx
 - **CommandManager.cs**: Dynamically discovers and executes commands via reflection
 - **IChatCommand**: Interface for all chat commands
 - **Harmony Patches**: Used to intercept game methods (e.g., TextChannelManagerPatch)

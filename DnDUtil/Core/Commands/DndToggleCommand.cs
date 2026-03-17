@@ -14,13 +14,13 @@ namespace DnDUtil.Core.Commands
         public string Namespace => "dnd";
         public void Execute(string[] args)
         {
-            if (Plugin.EnableFeature == null)
+            if (DndPlugin.EnableFeature == null)
             {
                 return;
             }
 
-            Plugin.EnableFeature.Value = !Plugin.EnableFeature.Value;
-            ChatUtils.AddGlobalNotification($"DnD feature is now {(Plugin.EnableFeature.Value ? "enabled" : "disabled")}.");
+            DndPlugin.EnableFeature.Value = !DndPlugin.EnableFeature.Value;
+            ChatUtils.AddGlobalNotification($"DnD feature is now {(DndPlugin.EnableFeature.Value ? "enabled" : "disabled")}.");
         }
     }
 }

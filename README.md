@@ -82,7 +82,7 @@ ot-mod-dnd/
 │   │   ├── ChatUtils.cs  # Chat utility methods
 │   │   └── CommandManager.cs
 │   ├── Patches/          # Harmony patches
-│   ├── Plugin.cs         # Main plugin entry point
+│   ├── DndPlugin.cs         # Main plugin entry point
 │   └── DnDUtil.csproj    # Project configuration
 ├── DnDUtil.Tests/        # Unit tests
 └── AndrewMod.slnx        # Solution file

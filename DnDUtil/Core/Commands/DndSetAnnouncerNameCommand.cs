@@ -11,12 +11,12 @@ namespace DnDUtil.Core.Commands
         public string Name => CMD;
         public string ShortName => "dsan";
         public string Description => "Set the name to use when sending messages to chat. Current: " + 
-        (Plugin.AnnouncerChatName?.Value ?? Plugin.DefaultAnnouncerChatName);
+        (DndPlugin.AnnouncerChatName?.Value ?? DndPlugin.DefaultAnnouncerChatName);
 
         public string Namespace => "dnd";
         public void Execute(string[] args)
         {
-            if (Plugin.AnnouncerChatName == null)
+            if (DndPlugin.AnnouncerChatName == null)
             {
                 return;
             }
@@ -27,8 +27,8 @@ namespace DnDUtil.Core.Commands
                 return;
             }
 
-            Plugin.AnnouncerChatName.Value = args[0];
-            ChatUtils.AddGlobalNotification($"Chat name is now set to {Plugin.AnnouncerChatName.Value}.");
+            DndPlugin.AnnouncerChatName.Value = args[0];
+            ChatUtils.AddGlobalNotification($"Chat name is now set to {DndPlugin.AnnouncerChatName.Value}.");
         }
     }
 }

@@ -34,18 +34,18 @@ namespace DnDUtil.Core.Commands
 
                     string userName = PlayerUtils.GetUserName();
                     var message = $"{userName} rolled {input}: {result}";
-                    string dndChatName = Plugin.AnnouncerChatName?.Value ?? Plugin.DefaultAnnouncerChatName;
+                    string dndChatName = DndPlugin.AnnouncerChatName?.Value ?? DndPlugin.DefaultAnnouncerChatName;
 
                     // pick notification or chat message based on config
-                    if (Plugin.AnnouncerArea?.Value == "self")
+                    if (DndPlugin.AnnouncerArea?.Value == "self")
                     {
                         ChatUtils.AddGlobalNotification(message);
                     }
-                    else if (Plugin.AnnouncerArea?.Value == "local")
+                    else if (DndPlugin.AnnouncerArea?.Value == "local")
                     {
                         ChatUtils.SendMessageAsync(dndChatName, message, Islocal: true);
                     }
-                    else if (Plugin.AnnouncerArea?.Value == "global")
+                    else if (DndPlugin.AnnouncerArea?.Value == "global")
                     {
                         ChatUtils.SendMessageAsync(dndChatName, message);
                     }

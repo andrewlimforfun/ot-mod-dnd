@@ -11,18 +11,18 @@ namespace DnDUtil.Core.Commands
         public string ShortName => "dsc";
         public string Description => "Toggle show/hide DnD command in chat." +
             "If enabled, user command such as '/roll' will be shown in chat. Current: " + 
-            (Plugin.ShowCommand?.Value == true ? "shown" : "hidden");
+            (DndPlugin.ShowCommand?.Value == true ? "shown" : "hidden");
 
         public string Namespace => "dnd";
         public void Execute(string[] args)
         {
-            if (Plugin.ShowCommand == null)
+            if (DndPlugin.ShowCommand == null)
             {
                 return;
             }
 
-            Plugin.ShowCommand.Value = !Plugin.ShowCommand.Value;
-            ChatUtils.AddGlobalNotification($"DnD user command is now {(Plugin.ShowCommand.Value ? "shown" : "hidden")}.");
+            DndPlugin.ShowCommand.Value = !DndPlugin.ShowCommand.Value;
+            ChatUtils.AddGlobalNotification($"DnD user command is now {(DndPlugin.ShowCommand.Value ? "shown" : "hidden")}.");
         }
     }
 }

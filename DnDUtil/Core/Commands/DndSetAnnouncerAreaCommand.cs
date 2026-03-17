@@ -12,13 +12,13 @@ namespace DnDUtil.Core.Commands
         public const string CMD = "dndsetannouncerarea";
         public string Name => CMD;
         public string ShortName => "dsaa";
-        public string Description => $"Set the area to use when announcing rolls: [{ValidAreasText}]. Current: " + (Plugin.AnnouncerArea?.Value ?? "self");
+        public string Description => $"Set the area to use when announcing rolls: [{ValidAreasText}]. Current: " + (DndPlugin.AnnouncerArea?.Value ?? "self");
 
         
         public string Namespace => "dnd";
         public void Execute(string[] args)
         {
-            if (Plugin.AnnouncerArea == null)
+            if (DndPlugin.AnnouncerArea == null)
             {
                 return;
             }
@@ -37,8 +37,8 @@ namespace DnDUtil.Core.Commands
                 return;
             }
 
-            Plugin.AnnouncerArea.Value = area;
-            ChatUtils.AddGlobalNotification($"Announcer area is now set to {Plugin.AnnouncerArea.Value}.");
+            DndPlugin.AnnouncerArea.Value = area;
+            ChatUtils.AddGlobalNotification($"Announcer area is now set to {DndPlugin.AnnouncerArea.Value}.");
         }
     }
 }
