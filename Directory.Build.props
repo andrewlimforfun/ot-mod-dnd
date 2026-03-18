@@ -29,6 +29,6 @@
 
         <!-- This path is used for local Install which automatically deploys the mod to the mod manager-->
         <!-- r2modman local install path — override per-machine via Directory.Build.user -->
-        <LocalBepInExPluginPath>..\..\..\AppData\Roaming\r2modmanPlus-local\OnTogetherVirtualCoWorking\profiles\Default\BepInEx\plugins\</LocalBepInExPluginPath>
+        <LocalBepInExPluginPath>$(APPDATA)\r2modmanPlus-local\OnTogetherVirtualCoWorking\profiles\Default\BepInEx\plugins\</LocalBepInExPluginPath>
     </PropertyGroup>
 </Project>
