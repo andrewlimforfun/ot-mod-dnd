@@ -420,3 +420,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Per-machine MSBuild overrides (local token, paths)
+Directory.Build.user
