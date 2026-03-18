@@ -43,7 +43,7 @@ namespace DnDUtil.Core.Commands
                     }
                     else if (DndPlugin.AnnouncerArea?.Value == "local")
                     {
-                        ChatUtils.SendMessageAsync(dndChatName, message, Islocal: true);
+                        ChatUtils.SendMessageAsync(dndChatName, message, true);
                     }
                     else if (DndPlugin.AnnouncerArea?.Value == "global")
                     {
