@@ -1,5 +1,5 @@
 ﻿
-using Commons;
+using Alpha;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
@@ -36,13 +36,13 @@ namespace DnDUtil
 
             // no patching needed, commands are handled by commons command manager
 
-            // Register commands with the shared Commons command manager
-            CommonsPlugin.CommandManager?.Register(new DndRollCommand());
-            CommonsPlugin.CommandManager?.Register(new RollCommand());
-            CommonsPlugin.CommandManager?.Register(new DndSetAnnouncerAreaCommand());
-            CommonsPlugin.CommandManager?.Register(new DndSetAnnouncerNameCommand());
-            CommonsPlugin.CommandManager?.Register(new DndShowCommand());
-            CommonsPlugin.CommandManager?.Register(new DndToggleCommand());
+            // Register commands with the shared Alpha command manager
+            AlphaPlugin.CommandManager?.Register(new DndRollCommand());
+            AlphaPlugin.CommandManager?.Register(new RollCommand());
+            AlphaPlugin.CommandManager?.Register(new DndSetAnnouncerAreaCommand());
+            AlphaPlugin.CommandManager?.Register(new DndSetAnnouncerNameCommand());
+            AlphaPlugin.CommandManager?.Register(new DndShowCommand());
+            AlphaPlugin.CommandManager?.Register(new DndToggleCommand());
         }
 
         void InitConfig()

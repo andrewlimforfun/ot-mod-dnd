@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DnDUtil;
-using Commons.Core.Command;
+using Alpha.Core.Command;
 
 namespace DnDUtil.Core.Commands
 {

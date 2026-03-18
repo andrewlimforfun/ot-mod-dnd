@@ -1,7 +1,7 @@
-﻿using Commons.Core.Util;
+﻿using Alpha.Core.Util;
 using BepInEx.Logging;
 using DnDUtil;
-using Commons.Core.Command;
+using Alpha.Core.Command;
 
 namespace DnDUtil.Core.Commands
 {

@@ -19,7 +19,7 @@
     <PackageReference Include="OnTogether.GameLibs" Version="1.1.0" />
     <PackageReference Include="UnityEngine.Modules" Version="6000.0.61" IncludeAssets="compile" />
     <PackageReference Include="HarmonyX" Version="2.10.1" />
-    <PackageReference Include="AndrewLin.OnTogether.Commons" Version="$(CommonsVersion)" />
+    <PackageReference Include="AndrewLin.OnTogether.Alpha" Version="$(AlphaVersion)" />
   </ItemGroup>
 
   <!-- Generate BuildInfo.g.cs with version info for use in the mod -->
@@ -62,7 +62,7 @@
         "version_number": "$(Version)",
         "website_url": "$(Website)",
         "description": "$(Description)",
-        "dependencies": ["BepInEx-BepInExPack-$(ThunderstoreBepInExVersion)", "AndrewLin-Commons-$(CommonsVersion)"]
+        "dependencies": ["BepInEx-BepInExPack-$(ThunderstoreBepInExVersion)", "AndrewLin-Alpha-$(AlphaVersion)"]
         }
       </ManifestContent>
     </PropertyGroup>

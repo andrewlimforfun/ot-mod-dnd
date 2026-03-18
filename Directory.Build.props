@@ -14,7 +14,7 @@
         <Nullable>enable</Nullable>
 
         <ThunderstoreBepInExVersion>5.4.2305</ThunderstoreBepInExVersion>
-        <CommonsVersion>0.0.1</CommonsVersion>
+        <AlphaVersion>0.0.1</AlphaVersion>
 
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Configurations>Debug;Release;Install</Configurations>
