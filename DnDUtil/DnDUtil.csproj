@@ -7,7 +7,7 @@
     <RootNamespace>DnDUtil</RootNamespace>
     <Description>A DnD dice mod for On-Together. Use /dndhelp</Description>
     <ZipOutputName>$(TeamName)-$(PackageName)-v$(Version).zip</ZipOutputName>
-    <LocalInstallPath>$(LocalBepInExPluginPath)\$(TeamName)-$(PackageName)\</LocalInstallPath>
+    <LocalInstallPath>$(LocalBepInExPluginPath)\$(TeamName)-$(PackageName)Dev\</LocalInstallPath>
   </PropertyGroup>
 
   <!-- NuGet Packages -->
