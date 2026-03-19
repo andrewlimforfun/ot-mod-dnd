@@ -1,5 +1,5 @@
 > [!WARNING]
-> **This repository has moved.** Development has been consolidated into [on-together-mods](../on-together-mods). This project will no longer be updated here.
+> **This repository has moved.** Development has been consolidated into [on-together-mods](https://github.com/andrewlimforfun/on-together-mods). This project will no longer be updated here.
 
 # On-Together Mods
 
