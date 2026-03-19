@@ -1,3 +1,6 @@
+> [!WARNING]
+> **This repository has moved.** Development has been consolidated into [on-together-mods](../on-together-mods). This project will no longer be updated here.
+
 # On-Together Mods
 
 A collection of mods for the game On-Together, built with BepInEx.
