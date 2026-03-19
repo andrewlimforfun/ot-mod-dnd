@@ -4,7 +4,8 @@
     <Platform Name="x64" />
     <BuildType Name="Debug" />
     <BuildType Name="Release" />
-    <BuildType Name="Install" /> 
+    <BuildType Name="Install" />
+    <BuildType Name="Publish" />
   </Configurations>
   <Project Path="DnDUtil/DnDUtil.csproj" />
   <Project Path="DnDUtil.Tests/DnDUtil.Tests.csproj" />

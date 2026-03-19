@@ -53,6 +53,18 @@
     <RemoveDir Directories="$(LocalInstallPath)" />
   </Target>
 
+  <!--
+    Publish to Thunderstore: dotnet build -c Publish
+    Requires tcli (https://github.com/thunderstore-io/thunderstore-cli):
+      dotnet tool install -g tcli
+    Requires TCLI_AUTH_TOKEN env var
+  -->
+  <Target Name="ThunderstorePublish" AfterTargets="Build" Condition="'$(Configuration)' == 'Publish'">
+    <Message Importance="high" Text="Publishing $(PackageName) v$(Version) to Thunderstore..." />
+    <Exec WorkingDirectory="$(ProjectDir)"
+          Command="tcli publish --package-version $(Version)" />
+  </Target>
+
   <!-- Generate manifest.json for Thunderstore Zip -->
   <Target Name="GenerateManifest" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
     <PropertyGroup>

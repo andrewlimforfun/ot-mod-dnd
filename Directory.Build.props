@@ -17,7 +17,7 @@
         <AlphaVersion>0.0.1</AlphaVersion>
 
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Configurations>Debug;Release;Install</Configurations>
+        <Configurations>Debug;Release;Install;Publish</Configurations>
 
         <!-- NuGet sources: official + BepInEx + samboy + local -->
         <RestoreAdditionalProjectSources>
